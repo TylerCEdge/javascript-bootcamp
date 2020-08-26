@@ -55,17 +55,91 @@
 
 // Boolean Logic
 
-var firstName = 'John';
-var age = 21;
+// var firstName = 'John';
+// var age = 21;
 
-if (age < 13) {
-  console.log(`${firstName} is a boy.`);
-} else if (age >= 13 && age <= 17) {
-  console.log(`${firstName} is a teenager.`);
-} else {
-  console.log(`${firstName} is a man.`);
+// if (age < 13) {
+//   console.log(`${firstName} is a boy.`);
+// } else if (age >= 13 && age <= 17) {
+//   console.log(`${firstName} is a teenager.`);
+// } else {
+//   console.log(`${firstName} is a man.`);
+// }
+
+// ternary option
+
+// age >= 21
+//   ? console.log(`${firstName} drinks beer.`)
+//   : console.log(`${firstName} drinks soda.`);
+
+// var drink = age >= 21 ? 'beer' : 'juice';
+// console.log(drink);
+
+// // Switch Statement
+
+// var job = 'teacher';
+
+// switch (job) {
+//   case 'teacher':
+//     console.log(`${firstName} teaches kids how to code.`);
+//     break;
+//   case 'driver':
+//     console.log(`${firstName} drives an Uber in New York.`);
+//     break;
+//   case 'designer':
+//     console.log(`${firstName} designs beautiful websites.`);
+//     break;
+//   default:
+//     console.log(`${firstName} does something else`);
+// }
+
+// switch (true) {
+//   case age < 13:
+//     console.log(`${firstName} is a boy.`);
+//     break;
+//   case age >= 13 && age < 20:
+//     console.log(`${firstName} is a teenager.`);
+//     break;
+//   case age >= 20 && age < 30:
+//     console.log(`${firstName} is a young man.`);
+//     break;
+//   default:
+//     console.log(`${firstName} is a man.`);
+// }
+
+// var height;
+
+// height = 23;
+
+// if (height || height === 0) {
+//   console.log('Variable is defined');
+// } else {
+//   console.log('Variable has NOT been defined.');
+// }
+
+// if (height == '23') {
+//   console.log('The == does type coercion!');
+// }
+
+// var scoreJohn = (89 + 120 + 103) / 3;
+// var scoreMike = (116 + 94 + 123) / 3;
+
+// var scoreMary = (97 + 134 + 105) / 3;
+
+// console.log(scoreJohn, scoreMike, scoreMary);
+
+// if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
+//   console.log(`John's wins with a score of ${scoreJohn}!`);
+// } else if (scoreMike > scoreJohn && scoreMike > scoreMary) {
+//   console.log(`Mike's team wins with a score of ${scoreMike}!`);
+// } else if (scoreMary > scoreJohn && scoreMary > scoreMike) {
+//   console.log(`Mary's team wins with a score of ${scoreMary}!`);
+// } else {
+//   console.log('It was a tie!');
+// }
+
+function calcAge(year) {
+  return 2020 - year;
 }
 
-age >= 21
-  ? console.log(`${firstName} drinks beer.`)
-  : console.log(`${firstName} drinks soda.`);
+console.log(calcAge(1990));

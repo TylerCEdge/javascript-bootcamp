@@ -138,8 +138,42 @@
 //   console.log('It was a tie!');
 // }
 
-function calcAge(year) {
-  return 2020 - year;
-}
+// function calcAge(year) {
+//   return 2020 - year;
+// }
 
-console.log(calcAge(1990));
+// var ageJohn = calcAge(1990);
+// var ageMike = calcAge(1948);
+// var ageJane = calcAge(1969);
+
+// console.log(ageJohn, ageMike, ageJane);
+
+// function retireCalc(year, name) {
+//   var age = calcAge(year);
+//   var retirement = 65 - age;
+
+//   if (retirement > 0) {
+//     console.log(`${name} retires in ${retirement} years!`);
+//   } else {
+//     console.log(`${name} is retired!`);
+//   }
+// }
+
+// retireCalc(1990, 'Tyler');
+
+var whatDoYouDo = function (job, firstName) {
+  switch (job) {
+    case 'teacher':
+      return firstName + ' teaches kids how to code.';
+    case 'driver':
+      return firstName + ' drives an Uber in New York city.';
+    case 'designer':
+      return firstName + ' designs awesome websites in San Francisco.';
+    default:
+      return firstName + ' does something else.';
+  }
+};
+
+console.log(whatDoYouDo('teacher', 'John'));
+console.log(whatDoYouDo('designer', 'Jane'));
+console.log(whatDoYouDo('retired', 'Mark'));

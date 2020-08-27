@@ -161,19 +161,76 @@
 
 // retireCalc(1990, 'Tyler');
 
-var whatDoYouDo = function (job, firstName) {
-  switch (job) {
-    case 'teacher':
-      return firstName + ' teaches kids how to code.';
-    case 'driver':
-      return firstName + ' drives an Uber in New York city.';
-    case 'designer':
-      return firstName + ' designs awesome websites in San Francisco.';
-    default:
-      return firstName + ' does something else.';
-  }
-};
+// var whatDoYouDo = function (job, firstName) {
+//   switch (job) {
+//     case 'teacher':
+//       return firstName + ' teaches kids how to code.';
+//     case 'driver':
+//       return firstName + ' drives an Uber in New York city.';
+//     case 'designer':
+//       return firstName + ' designs awesome websites in San Francisco.';
+//     default:
+//       return firstName + ' does something else.';
+//   }
+// };
 
-console.log(whatDoYouDo('teacher', 'John'));
-console.log(whatDoYouDo('designer', 'Jane'));
-console.log(whatDoYouDo('retired', 'Mark'));
+// console.log(whatDoYouDo('teacher', 'John'));
+// console.log(whatDoYouDo('designer', 'Jane'));
+// console.log(whatDoYouDo('retired', 'Mark'));
+
+var names = ['John', 'Mark', 'Jane'];
+// Second way to create an array
+var years = new Array(1990, 1969, 1948);
+// Console log example for element 0 in array names.
+names[1] = 'Ben';
+// Adding Mary as a new element to the array.
+names.push('Mary');
+
+console.log(names);
+
+// Different data types
+
+var john = ['John', 'Smith', 1990, 'teacher', false];
+
+// Adding a title/surname to the beginning of the array.
+john.unshift('Mr.');
+// Adding John's favorite color to the end of the array.
+john.push('blue');
+// Removes the last element from the array
+john.pop();
+//  Removes the first element of the array
+john.shift();
+//  Returns the position of the argument we pass into the array.
+john.indexOf(1990);
+console.log(john);
+
+// Tip Calc Challenge
+
+var tips = [];
+var total = [];
+
+function tipCalc(bill) {
+  let tip;
+  if (bill < 50) {
+    tip = bill * 0.2;
+    tips.push(tip);
+  } else if (bill > 50 && bill < 200) {
+    tip = bill * 0.15;
+    tips.push(tip);
+  } else {
+    tip = bill * 0.1;
+    tips.push(tip);
+  }
+
+  if (tips) {
+    let totalBill;
+    for (let i = 0; i < tips.length; i++) {
+      totalBill = tips[i] + bill;
+      total.push(totalBill);
+    }
+  }
+}
+
+tipCalc(70);
+console.log(tips);
+console.log(total);

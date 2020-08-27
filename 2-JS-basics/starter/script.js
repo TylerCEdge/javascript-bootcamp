@@ -178,59 +178,141 @@
 // console.log(whatDoYouDo('designer', 'Jane'));
 // console.log(whatDoYouDo('retired', 'Mark'));
 
-var names = ['John', 'Mark', 'Jane'];
-// Second way to create an array
-var years = new Array(1990, 1969, 1948);
-// Console log example for element 0 in array names.
-names[1] = 'Ben';
-// Adding Mary as a new element to the array.
-names.push('Mary');
+// var names = ['John', 'Mark', 'Jane'];
+// // Second way to create an array
+// var years = new Array(1990, 1969, 1948);
+// // Console log example for element 0 in array names.
+// names[1] = 'Ben';
+// // Adding Mary as a new element to the array.
+// names.push('Mary');
 
-console.log(names);
+// console.log(names);
 
-// Different data types
+// // Different data types
 
-var john = ['John', 'Smith', 1990, 'teacher', false];
+// var john = ['John', 'Smith', 1990, 'teacher', false];
 
-// Adding a title/surname to the beginning of the array.
-john.unshift('Mr.');
-// Adding John's favorite color to the end of the array.
-john.push('blue');
-// Removes the last element from the array
-john.pop();
-//  Removes the first element of the array
-john.shift();
-//  Returns the position of the argument we pass into the array.
-john.indexOf(1990);
-console.log(john);
+// // Adding a title/surname to the beginning of the array.
+// john.unshift('Mr.');
+// // Adding John's favorite color to the end of the array.
+// john.push('blue');
+// // Removes the last element from the array
+// john.pop();
+// //  Removes the first element of the array
+// john.shift();
+// //  Returns the position of the argument we pass into the array.
+// john.indexOf(1990);
+// console.log(john);
 
-// Tip Calc Challenge
+// // Tip Calc Challenge
 
-var tips = [];
-var total = [];
+// var tips = [];
+// var total = [];
 
-function tipCalc(bill) {
-  let tip;
-  if (bill < 50) {
-    tip = bill * 0.2;
-    tips.push(tip);
-  } else if (bill > 50 && bill < 200) {
-    tip = bill * 0.15;
-    tips.push(tip);
-  } else {
-    tip = bill * 0.1;
-    tips.push(tip);
-  }
+// function tipCalc(bill) {
+//   let tip;
+//   if (bill < 50) {
+//     tip = bill * 0.2;
+//     tips.push(tip);
+//   } else if (bill > 50 && bill < 200) {
+//     tip = bill * 0.15;
+//     tips.push(tip);
+//   } else if (bill > 200) {
+//     tip = bill * 0.1;
+//     tips.push(tip);
+//   } else {
+//     return;
+//   }
 
-  if (tips) {
-    let totalBill;
-    for (let i = 0; i < tips.length; i++) {
-      totalBill = tips[i] + bill;
-      total.push(totalBill);
-    }
-  }
+//   if (tips) {
+//     let totalBill;
+//     for (let i = 0; i < tips.length; i++) {
+//       totalBill = tips[i] + bill;
+//       total.push(totalBill);
+//     }
+//   }
+// }
+
+// tipCalc(70);
+// // tipCalc(30);
+// tipCalc(400);
+// console.log(tips);
+// console.log(total);
+
+// Objects and properties section
+// Order matters for arrays but it doesn't for objects
+
+// // Object literal
+// var john = {
+//   firstName: 'John',
+//   lastName: 'Smith',
+//   birthYear: 1990,
+//   family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//   job: 'teacher',
+//   isMarried: false,
+// };
+
+// // Viewing the object in the console.
+// // console.log(john);
+
+// // Dot notation to access firstName value in the john object
+// // console.log(john.firstName);
+
+// // Bracket notation to access birthYear in the john object
+// // Must be a string inside the brackets.  This is what I've been forgetting for this format
+// // console.log(john['birthYear']);
+
+// john.job = 'designer';
+// john['isMarried'] = true;
+// console.log(john);
+
+// // new Object syntax
+// var jane = new Object();
+// jane.name = 'Jane';
+// jane.birthYear = 1969;
+// jane['lastName'] = 'Smith';
+// console.log(jane);
+
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false,
+  calcAge: function () {
+    // Function Expression
+    this.age = 2020 - this.birthYear;
+  },
+};
+john.calcAge();
+// console.log(john);
+
+var mark = {
+  firstName: 'Mark',
+  mass: 78,
+  height: 10,
+  calcBmi: function () {
+    this.bmi = this.mass / (this.height * this.height);
+  },
+};
+
+var john = {
+  firstName: 'John',
+  mass: 100,
+  height: 11,
+  calcBmi: function () {
+    this.bmi = this.mass / (this.height * this.height);
+  },
+};
+
+mark.calcBmi();
+john.calcBmi();
+
+if (john.bmi > mark.bmi) {
+  console.log(`John's bmi is higher.  It is ${john.bmi}`);
+} else if (mark.bmi > john.bmi) {
+  console.log(`Mark's bmi is higher.  It is ${mark.bmi}`);
+} else {
+  console.log('It was a tie!');
 }
-
-tipCalc(70);
-console.log(tips);
-console.log(total);

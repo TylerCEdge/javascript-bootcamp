@@ -273,46 +273,87 @@
 // jane['lastName'] = 'Smith';
 // console.log(jane);
 
-var john = {
-  firstName: 'John',
-  lastName: 'Smith',
-  birthYear: 1990,
-  family: ['Jane', 'Mark', 'Bob', 'Emily'],
-  job: 'teacher',
-  isMarried: false,
-  calcAge: function () {
-    // Function Expression
-    this.age = 2020 - this.birthYear;
-  },
-};
-john.calcAge();
-// console.log(john);
+// var john = {
+//   firstName: 'John',
+//   lastName: 'Smith',
+//   birthYear: 1990,
+//   family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//   job: 'teacher',
+//   isMarried: false,
+//   calcAge: function () {
+//     // Function Expression
+//     this.age = 2020 - this.birthYear;
+//   },
+// };
+// john.calcAge();
+// // console.log(john);
 
-var mark = {
-  firstName: 'Mark',
-  mass: 78,
-  height: 10,
-  calcBmi: function () {
-    this.bmi = this.mass / (this.height * this.height);
-  },
-};
+// var mark = {
+//   firstName: 'Mark',
+//   mass: 78,
+//   height: 1.95,
+//   calcBmi: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//   },
+// };
 
-var john = {
-  firstName: 'John',
-  mass: 100,
-  height: 11,
-  calcBmi: function () {
-    this.bmi = this.mass / (this.height * this.height);
-  },
-};
+// var john = {
+//   firstName: 'John',
+//   mass: 84,
+//   height: 1.7,
+//   calcBmi: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//   },
+// };
 
-mark.calcBmi();
-john.calcBmi();
+// mark.calcBmi();
+// john.calcBmi();
 
-if (john.bmi > mark.bmi) {
-  console.log(`John's bmi is higher.  It is ${john.bmi}`);
-} else if (mark.bmi > john.bmi) {
-  console.log(`Mark's bmi is higher.  It is ${mark.bmi}`);
-} else {
-  console.log('It was a tie!');
+// if (john.bmi > mark.bmi) {
+//   console.log(`John's bmi is higher.  It is ${john.bmi}`);
+// } else if (mark.bmi > john.bmi) {
+//   console.log(`Mark's bmi is higher.  It is ${mark.bmi}`);
+// } else {
+//   console.log('It was a tie!');
+// }
+
+// Loops and Iteration
+
+// for (let i = 0; i <= 9; i++) {
+//   console.log(i);
+// }
+
+// for (let i = 1; i <= 20; i += 2) {
+//   console.log(i);
+// }
+/*
+var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+
+for (let i = 0; i < john.length; i++) {
+  console.log(john[i]);
 }
+
+//  While loop example doing the same as the above for loop.
+var i = 0;
+while (i < john.length) {
+  console.log(john[i]);
+  i++;
+}
+*/
+
+// //  continue and break statements
+// var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+// // continue skips elements that dont meet the condition.
+// for (var i = 0; i < john.length; i++) {
+//   if (typeof john[i] !== 'string') continue;
+//   console.log(john[i]);
+// }
+// // break ends the entire process if the condition isn't met.
+// for (var i = 0; i < john.length; i++) {
+//   if (typeof john[i] !== 'string') break;
+//   console.log(john[i]);
+// }
+// //  Reverse loop
+// for (i = john.length - 1; i >= 0; i--) {
+//   console.log(john[i]);
+// }

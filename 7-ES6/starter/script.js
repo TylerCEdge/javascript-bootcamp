@@ -273,3 +273,62 @@ const all = [h, ...boxes];
 
 Array.from(all).forEach((item) => (item.style.color = '#CC00FF'));
 */
+/*
+// Lecture: Rest parameters
+
+// ES5
+function isFullAge5() {
+  var argsArr = Array.prototype.slice.call(arguments);
+
+  argsArr.forEach(function (item) {
+    // console.log(2020 - item >= 18);
+  });
+}
+
+isFullAge5(1990, 1999, 1965);
+isFullAge5(1990, 1999, 1965, 2016, 1987);
+
+// ES6
+function isFullAge6(...years) {
+  years.forEach((item) => console.log(2020 - item >= 18));
+}
+
+isFullAge6(1990, 1999, 1965, 2016, 1987);
+*/
+
+// Lecture: Default Parameters
+/*
+// ES5
+function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+  lastName === undefined ? (lastName = 'Smith') : lastName;
+  nationality === undefined ? (nationality = 'American') : nationality;
+
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.yearOfBirth = yearOfBirth;
+  this.nationality = nationality;
+}
+
+var john = new SmithPerson('John', 1990);
+var emily = new SmithPerson('Emily', 1983, 'Diaz', 'Spanish');
+
+// ES6
+function SmithPerson(
+  firstName,
+  yearOfBirth,
+  lastName = 'Smith',
+  nationality = 'American'
+) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.yearOfBirth = yearOfBirth;
+  this.nationality = nationality;
+}
+
+var john = new SmithPerson('John', 1990);
+var emily = new SmithPerson('Emily', 1983, 'Diaz', 'Spanish');
+*/
+
+// Lecture: Maps
+
+// ES5

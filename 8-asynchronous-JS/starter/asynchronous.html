@@ -53,36 +53,69 @@
       //   }
       //   getRecipe();
 
-      const getIDs = new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve([123, 456, 789, 101]);
-        }, 1000);
-      });
+      //   const getIDs = new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       resolve([123, 456, 789, 101]);
+      //     }, 1000);
+      //   });
 
-      const getRecipe = (recID) => {
-        return new Promise((resolve, reject) => {
-          setTimeout(
-            (ID) => {
-              const recipe = { title: 'Salad', publisher: 'Tyler Edge' };
-              resolve(`${ID}: ${recipe.title}`);
-            },
-            1000,
-            recID
-          );
-        });
-      };
+      //   const getRecipe = (recID) => {
+      //     return new Promise((resolve, reject) => {
+      //       setTimeout(
+      //         (ID) => {
+      //           const recipe = { title: 'Salad', publisher: 'Tyler Edge' };
+      //           resolve(`${ID}: ${recipe.title}`);
+      //         },
+      //         1000,
+      //         recID
+      //       );
+      //     });
+      //   };
 
-      getIDs
-        .then((IDs) => {
-          console.log(IDs);
-          return getRecipe(IDs[2]);
-        })
-        .then((recipe) => {
-          console.log(recipe);
-        })
-        .catch((error) => {
-          console.log('Error!');
-        });
+      //   const getRelated = (publisher) => {
+      //     return new Promise((resolve, reject) => {
+      //       setTimeout(
+      //         (pub) => {
+      //           const recipe = { title: 'Smoothie', publisher: 'Tyler Edge' };
+      //           resolve(`${pub}: ${recipe.title}`);
+      //         },
+      //         1000,
+      //         publisher
+      //       );
+      //     });
+      //   };
+
+      //   getIDs
+      //     .then((IDs) => {
+      //       console.log(IDs);
+      //       return getRecipe(IDs[2]);
+      //     })
+      //     .then((recipe) => {
+      //       console.log(recipe);
+      //       return getRelated('Tyler Edge');
+      //     })
+      //     .then((recipe) => {
+      //       console.log(recipe);
+      //     })
+      //     .catch((error) => {
+      //       console.log('Error!');
+      //     });
+
+      //   async function getRecipesAw() {
+      //     const IDs = await getIDs;
+      //     console.log(IDs);
+      //     const recipe = await getRecipe(IDs[2]);
+      //     console.log(recipe);
+      //     const related = await getRelated('Tyler Edge');
+      //     console.log(related);
+
+      //     return recipe;
+      //   }
+      //   getRecipesAw().then((result) => console.log(result));
+
+      fetch(
+        'https://crossorigin.me/https://www.metaweather.com/api/location/2487956/'
+      );
     </script>
   </body>
 </html>

@@ -55,7 +55,6 @@ elements.searchResultsPages.addEventListener('click', (e) => {
     const goToPage = parseInt(btn.dataset.goto, 10);
     searchView.clearResults();
     searchView.renderResults(state.search.result, goToPage);
-    console.log(goToPage);
   }
 });
 
@@ -65,10 +64,15 @@ elements.searchResultsPages.addEventListener('click', (e) => {
 const controlRecipe = async () => {
   // Get ID from URL
   const id = window.location.hash.replace('#', '');
-  console.log(id);
 
   if (id) {
     // Prepare UI for changes
+    recipeView.clearRecipe();
+    renderLoader(elements.recipe);
+
+    // Highlight selected search item
+    if (state.search) searchView.highlightSelected(id);
+
     // Create new recipe object
     state.recipe = new Recipe(id);
 
@@ -82,8 +86,8 @@ const controlRecipe = async () => {
       state.recipe.calcServings();
 
       // Render recipe
+      clearLoader();
       recipeView.renderRecipe(state.recipe);
-      console.log(state.recipe);
     } catch (error) {
       alert('Error processing recipe! 😅');
     }
@@ -93,3 +97,13 @@ const controlRecipe = async () => {
 ['hashchange', 'load'].forEach((event) =>
   window.addEventListener(event, controlRecipe)
 );
+
+// Handling recipe button clicks
+elements.recipe.addEventListener('click', (e) => {
+  if (e.target.matches('.btn-decrease, .btn-decrease *')) {
+    state.recipe.updateServings('dec');
+  } else if (e.target.matches('.btn-increase, .btn-increase *')) {
+    state.recipe.updateServings('inc');
+  }
+  console.log(state.recipe);
+});
